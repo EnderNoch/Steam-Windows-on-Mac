@@ -66,6 +66,11 @@ wrapper.
 
 ## Good to know
 
+- **Starting takes a while too.** Wine starts its Windows services first, then Steam checks for
+  updates; the window shows up after a few seconds, not instantly.
+- **Steam shows up as two "wine" icons in the Dock.** Wine gives every Windows program with a
+  window its own Dock icon, and Steam is two programs: the client (`Steam.exe`) and the browser
+  that draws its windows (`steamwebhelper.exe`).
 - **Quitting takes a while.** After Steam → Exit, Steam saves settings, syncs cloud saves and
   closes its processes, all slower under Wine. Wait until the icon leaves the Dock; don't force
   quit, or cloud saves and settings may not be written.
@@ -155,6 +160,11 @@ opakowaniu.
 
 ### Dobrze wiedzieć
 
+- **Uruchamianie też trwa.** Wine najpierw uruchamia swoje usługi Windowsa, potem Steam sprawdza
+  aktualizacje; okno pojawia się po kilku sekundach, a nie od razu.
+- **Steam jest w Docku jako dwie ikony „wine”.** Wine daje każdemu programowi Windows z oknem
+  osobną ikonę w Docku, a Steam to dwa programy: klient (`Steam.exe`) i przeglądarka, która rysuje
+  jego okna (`steamwebhelper.exe`).
 - **Zamykanie trwa dłużej.** Po Steam → Wyjdź Steam zapisuje ustawienia, synchronizuje zapisy z
   chmurą i zamyka procesy, a pod Wine wszystko to jest wolniejsze. Poczekaj, aż ikona zniknie z
   Docka; nie zamykaj na siłę, bo zapisy w chmurze i ustawienia mogą się nie zapisać.

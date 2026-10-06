@@ -37,6 +37,12 @@ It asks whether to copy client settings and launch options, your custom library 
 collections from Steam for Mac, and backs up the old ones first. It leaves `config.vdf` alone —
 it holds Mac paths and the login.
 
+### Its own name in Remote Play
+
+Steam Link and Remote Play show Steam Windows under the Mac's name, the same as Steam for Mac.
+The installer offers to rename it to `<mac-name>-steam-windows` (for example
+`macbook-air-steam-windows`); only Steam Windows changes, not the Mac.
+
 ### Terminal way
 
 Same result, step by step, for those who'd rather see each part. After creating `Steam
@@ -46,6 +52,7 @@ Windows.app` in Sikarugir Creator (as above):
 ./setup.sh install    # puts the Steam installer in the wrapper; open the wrapper and click through it
 ./setup.sh finish     # runs Steam instead of the installer, Dock icon, icon, Retina
 ./setup.sh settings   # optional: settings from Steam for Mac (quit both Steams first)
+./setup.sh name       # optional: <mac-name>-steam-windows in Remote Play (quit Steam first)
 ```
 
 ## Games in Applications and the Dock
@@ -72,6 +79,9 @@ wrapper.
 - **Steam shows up as two "wine" icons in the Dock.** Wine gives every Windows program with a
   window its own Dock icon, and Steam is two programs: the client (`Steam.exe`) and the browser
   that draws its windows (`steamwebhelper.exe`).
+- **One Steam at a time.** Signing in to the same account elsewhere (Steam for Mac, another
+  PC) logs Steam Windows out with "Session Replaced", and it doesn't reconnect by itself — quit
+  and reopen it.
 - **Quitting takes a while.** After Steam → Exit, Steam saves settings, syncs cloud saves and
   closes its processes, all slower under Wine. Wait until the icon leaves the Dock; don't force
   quit, or cloud saves and settings may not be written.
@@ -136,6 +146,12 @@ jeszcze raz. Zapyta, czy skopiować ustawienia klienta i opcje uruchamiania, wł
 bibliotece i kolekcje ze Steama na Maca, a najpierw zrobi kopię starych. Nie rusza `config.vdf`,
 bo są w nim ścieżki z Maca i logowanie.
 
+#### Własna nazwa w Remote Play
+
+Steam Link i Remote Play pokazują Steam Windows pod nazwą Maca, tak samo jak Steama na Maca.
+Instalator proponuje zmianę na `<nazwa-maca>-steam-windows` (na przykład
+`macbook-air-steam-windows`); zmienia się tylko Steam Windows, nie Mac.
+
 #### Przez terminal
 
 To samo krok po kroku, dla tych, którzy wolą widzieć każdą część. Po utworzeniu `Steam
@@ -145,6 +161,7 @@ Windows.app` w Sikarugir Creator (jak wyżej):
 ./setup.sh install    # wrzuca instalator Steama do opakowania; otwórz opakowanie i przeklikaj go
 ./setup.sh finish     # Steam zamiast instalatora, ikona w Docku, ikona, Retina
 ./setup.sh settings   # opcjonalnie: ustawienia ze Steama na Maca (zamknij oba Steamy)
+./setup.sh name       # opcjonalnie: <nazwa-maca>-steam-windows w Remote Play (zamknij Steama)
 ```
 
 ### Gry w Aplikacjach i w Docku
@@ -171,6 +188,9 @@ opakowaniu.
 - **Steam jest w Docku jako dwie ikony „wine”.** Wine daje każdemu programowi Windows z oknem
   osobną ikonę w Docku, a Steam to dwa programy: klient (`Steam.exe`) i przeglądarka, która rysuje
   jego okna (`steamwebhelper.exe`).
+- **Jeden Steam naraz.** Zalogowanie na to samo konto gdzie indziej (Steam na Maca, inny PC)
+  wylogowuje Steam Windows z komunikatem „Session Replaced” i nie łączy się on sam ponownie —
+  zamknij go i otwórz jeszcze raz.
 - **Zamykanie trwa dłużej.** Po Steam → Wyjdź Steam zapisuje ustawienia, synchronizuje zapisy z
   chmurą i zamyka procesy, a pod Wine wszystko to jest wolniejsze. Poczekaj, aż ikona zniknie z
   Docka; nie zamykaj na siłę, bo zapisy w chmurze i ustawienia mogą się nie zapisać.

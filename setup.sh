@@ -4,6 +4,7 @@
 #   ./setup.sh install   puts the Steam installer in the wrapper; then open the wrapper and click through it
 #   ./setup.sh finish    runs Steam instead of the installer, shows the app in the Dock, sets the icon and Retina
 #   ./setup.sh settings  copies settings, artwork and collections from Steam for Mac (quit both Steams first)
+#   ./setup.sh name      optional: shows it as <mac-name>-steam-windows in Remote Play (third argument: own name)
 #
 # The wrapper path can be given as the second argument; default is the one Sikarugir Creator makes.
 set -e
@@ -51,6 +52,14 @@ finish)
 	refresh
 	echo "Done. Open \"$APP\" — the first start updates Steam."
 	;;
+name)
+	# optional: its own name in Remote Play and Steam Link (Steam must be closed)
+	NAME="${3:-$(scutil --get LocalHostName | tr '[:upper:]' '[:lower:]')-steam-windows}"
+	# Hostname is the name Steam shows; ComputerName is the old Windows name, 15 characters at most
+	sed -i '' -e "s/^\"Hostname\"=\".*\"/\"Hostname\"=\"$NAME\"/" \
+		-e 's/^"ComputerName"=".*"/"ComputerName"="STEAM-WINDOWS"/' "$APP/Contents/SharedSupport/prefix/system.reg"
+	echo "Steam Windows is now \"$NAME\" in Remote Play."
+	;;
 settings)
 	MAC="$HOME/Library/Application Support/Steam/userdata"
 	for user in "$MAC"/<->(N); do
@@ -68,7 +77,7 @@ settings)
 	done
 	;;
 *)
-	echo "Usage: ./setup.sh install | finish | settings [wrapper.app]"
+	echo "Usage: ./setup.sh install | finish | settings | name [wrapper.app] [name]"
 	exit 1
 	;;
 esac

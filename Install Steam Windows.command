@@ -89,7 +89,19 @@ sed -i '' 's/^"LogPixels"=dword:00000060/"LogPixels"=dword:000000c0/' "$PREFIX/u
 touch "$APP"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$APP"
 
-# 6. Optional: settings, artwork and collections from Steam for Mac
+# 6. Optional: a name of its own in Remote Play and Steam Link, so it isn't mixed up with the Mac
+NAME="$(scutil --get LocalHostName | tr '[:upper:]' '[:lower:]')-steam-windows"
+if ! grep -q "^\"Hostname\"=\"$NAME\"" "$PREFIX/system.reg"; then
+    read -p "Add -steam-windows to the name in Remote Play ($NAME)? [y/N] " ANSWER
+    if [ "$ANSWER" = "y" ]; then
+        # Hostname is the name Steam shows; ComputerName is the old Windows name, 15 characters at most
+        sed -i '' -e "s/^\"Hostname\"=\".*\"/\"Hostname\"=\"$NAME\"/" \
+            -e 's/^"ComputerName"=".*"/"ComputerName"="STEAM-WINDOWS"/' "$PREFIX/system.reg"
+        echo "Renamed."
+    fi
+fi
+
+# 7. Optional: settings, artwork and collections from Steam for Mac
 MAC="$HOME/Library/Application Support/Steam/userdata"
 WIN="$(dirname "$STEAM")/userdata"
 if [ -d "$MAC" ] && [ -d "$WIN" ] && ! pgrep -x steam_osx > /dev/null; then

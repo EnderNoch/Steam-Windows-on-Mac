@@ -36,6 +36,17 @@ It asks whether to copy client settings and launch options, your custom library 
 collections from Steam for Mac, and backs up the old ones first. It leaves `config.vdf` alone —
 it holds Mac paths and the login.
 
+### Terminal way
+
+Same result, step by step, for those who'd rather see each part. After creating `Steam
+Windows.app` in Sikarugir Creator (as above):
+
+```
+./setup.sh install    # puts the Steam installer in the wrapper; open the wrapper and click through it
+./setup.sh finish     # runs Steam instead of the installer, Dock icon, icon, Retina
+./setup.sh settings   # optional: settings from Steam for Mac (quit both Steams first)
+```
+
 ## Games in Applications and the Dock
 
 Double-click **Make Game Shortcuts.command**. For every game installed in Steam Windows it makes a
@@ -75,7 +86,7 @@ Kept here so nobody has to repeat it:
 ## Credits
 
 [Sikarugir](https://github.com/Sikarugir-App/Sikarugir) and its Wine engines do the real work.
-Steam is a trademark of Valve; Sikarugir's icon belongs to its authors. This repo only has two
+Steam is a trademark of Valve; Sikarugir's icon belongs to its authors. This repo only has
 scripts, an icon and this guide.
 
 ---
@@ -113,6 +124,17 @@ Po pierwszym zalogowaniu w Steam Windows zamknij go i uruchom **Install Steam Wi
 jeszcze raz. Zapyta, czy skopiować ustawienia klienta i opcje uruchamiania, własne okładki w
 bibliotece i kolekcje ze Steama na Maca, a najpierw zrobi kopię starych. Nie rusza `config.vdf`,
 bo są w nim ścieżki z Maca i logowanie.
+
+#### Przez terminal
+
+To samo krok po kroku, dla tych, którzy wolą widzieć każdą część. Po utworzeniu `Steam
+Windows.app` w Sikarugir Creator (jak wyżej):
+
+```
+./setup.sh install    # wrzuca instalator Steama do opakowania; otwórz opakowanie i przeklikaj go
+./setup.sh finish     # Steam zamiast instalatora, ikona w Docku, ikona, Retina
+./setup.sh settings   # opcjonalnie: ustawienia ze Steama na Maca (zamknij oba Steamy)
+```
 
 ### Gry w Aplikacjach i w Docku
 
@@ -152,5 +174,5 @@ opakowaniu.
 ### Podziękowania
 
 Całą robotę robi [Sikarugir](https://github.com/Sikarugir-App/Sikarugir) i jego silniki Wine.
-Steam to znak towarowy Valve, ikona Sikarugira należy do jego autorów. W tym repo są tylko dwa
+Steam to znak towarowy Valve, ikona Sikarugira należy do jego autorów. W tym repo są tylko
 skrypty, ikona i ten poradnik.

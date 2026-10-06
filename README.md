@@ -10,7 +10,8 @@ resolution.
 
 <p><img src="Icon/icon.png" width="160" alt="Steam Windows icon"></p>
 
-Tested on a MacBook Air M1, macOS 27, October 2026.
+Tested on a MacBook Air M1, macOS 27, October 2026: Happy Wheels plays with no noticeable input
+lag.
 
 ## Install
 
@@ -108,7 +109,8 @@ darmowe, otwartoźródłowe opakowanie [Sikarugir](https://github.com/Sikarugir-
 w środku, ustawione tak, że otwiera się jak zwykła aplikacja, siedzi w Docku, ma własną ikonę i
 rysuje w pełnej rozdzielczości Retina.
 
-Sprawdzone na MacBooku Air M1, macOS 27, październik 2026.
+Sprawdzone na MacBooku Air M1, macOS 27, październik 2026: Happy Wheels działa bez odczuwalnego
+input laga.
 
 ### Instalacja
 

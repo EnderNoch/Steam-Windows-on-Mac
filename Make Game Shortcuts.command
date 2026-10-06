@@ -29,11 +29,19 @@ for MANIFEST in "$STEAMDIR"/steamapps/appmanifest_*.acf; do
     GAME="$OUT/$NAME.app"
     mkdir -p "$GAME/Contents/MacOS" "$GAME/Contents/Resources"
 
-    cat > "$GAME/Contents/MacOS/run" << EOF
+    # The wrapper starts Steam with its "Program Flags"; a second copy hands -applaunch to a running Steam
+    cat > "$GAME/Contents/MacOS/run" << 'EOF'
 #!/bin/sh
 # Starts Steam Windows if needed and launches the game in it
-exec "$APP/Contents/MacOS/Sikarugir" run "C:\\\\Program Files (x86)\\\\Steam\\\\Steam.exe" -applaunch $ID > /dev/null 2>&1
+APP="__APP__"
+PLIST="$APP/Contents/Info.plist"
+plutil -replace "Program Flags" -string "-applaunch __ID__" "$PLIST"
+open -n "$APP"
+# the wrapper reads the flags when it starts; put them back so Steam Windows opens just Steam
+sleep 20
+plutil -replace "Program Flags" -string "" "$PLIST"
 EOF
+    sed -i '' -e "s|__APP__|$APP|" -e "s|__ID__|$ID|" "$GAME/Contents/MacOS/run"
     chmod +x "$GAME/Contents/MacOS/run"
 
     cat > "$GAME/Contents/Info.plist" << EOF

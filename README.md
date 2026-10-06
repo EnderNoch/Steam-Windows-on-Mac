@@ -94,6 +94,10 @@ Kept here so nobody has to repeat it:
 Steam is a trademark of Valve; Sikarugir's icon belongs to its authors. This repo only has
 scripts, an icon and this guide.
 
+## License
+
+[MIT](LICENSE) — use, change and share it freely; keep the author's name (EnderNoch) with it.
+
 ---
 
 ## Po polsku
@@ -186,3 +190,7 @@ opakowaniu.
 Całą robotę robi [Sikarugir](https://github.com/Sikarugir-App/Sikarugir) i jego silniki Wine.
 Steam to znak towarowy Valve, ikona Sikarugira należy do jego autorów. W tym repo są tylko
 skrypty, ikona i ten poradnik.
+
+### Licencja
+
+[MIT](LICENSE) — wolno używać, zmieniać i udostępniać; trzeba zostawić nazwę autora (EnderNoch).

@@ -84,7 +84,9 @@ wrapper.
   and reopen it.
 - **Quitting takes a while.** After Steam → Exit, Steam saves settings, syncs cloud saves and
   closes its processes, all slower under Wine. Wait until the icon leaves the Dock; don't force
-  quit, or cloud saves and settings may not be written.
+  quit, or cloud saves and settings may not be written. Sometimes one "wine" icon still stays
+  after a minute: that `Steam.exe` hung on exit after everything was saved — force quit it
+  (right-click its Dock icon with Option held → Force Quit).
 - Run the installer only while Steam Windows is closed — Wine rewrites its settings on exit.
 
 ## What did not work
@@ -193,7 +195,10 @@ opakowaniu.
   zamknij go i otwórz jeszcze raz.
 - **Zamykanie trwa dłużej.** Po Steam → Wyjdź Steam zapisuje ustawienia, synchronizuje zapisy z
   chmurą i zamyka procesy, a pod Wine wszystko to jest wolniejsze. Poczekaj, aż ikona zniknie z
-  Docka; nie zamykaj na siłę, bo zapisy w chmurze i ustawienia mogą się nie zapisać.
+  Docka; nie zamykaj na siłę, bo zapisy w chmurze i ustawienia mogą się nie zapisać. Czasem
+  jedna ikona „wine” zostaje nawet po minucie: to `Steam.exe` zawiesił się przy wyłączaniu, gdy
+  wszystko było już zapisane — wymuś jego zamknięcie (prawy klik na ikonie w Docku z wciśniętym
+  Option → Wymuś koniec).
 - Instalator uruchamiaj tylko przy zamkniętym Steam Windows — Wine nadpisuje ustawienia przy
   wyłączaniu.
 

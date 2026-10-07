@@ -88,6 +88,15 @@ wrapper.
   after a minute: that `Steam.exe` hung on exit after everything was saved — force quit it
   (right-click its Dock icon with Option held → Force Quit).
 - Run the installer only while Steam Windows is closed — Wine rewrites its settings on exit.
+- **Full screen the Mac way.** Turn full screen off in the game's own options, then click the
+  green button of its window: the game gets its own Space, like any Mac app — swipe or ⌃← / ⌃→
+  to switch, and it shows up in Mission Control. A game in a window may keep the cursor inside
+  it, as on Windows; ⌘Tab lets it go.
+- **No sound in a game?** Quit the game and start it again — that usually brings the audio back.
+- **Needs Rosetta 2.** The Sikarugir wrapper and its Wine engine are Intel code, so macOS lists
+  Steam Windows among the apps that won't run on macOS 28. Whether it keeps working there
+  depends on how much of Rosetta Apple leaves for games and on a new Sikarugir release; it works
+  on macOS 27.
 
 ## What did not work
 
@@ -201,6 +210,15 @@ opakowaniu.
   Option → Wymuś koniec).
 - Instalator uruchamiaj tylko przy zamkniętym Steam Windows — Wine nadpisuje ustawienia przy
   wyłączaniu.
+- **Pełny ekran po macowemu.** Wyłącz pełny ekran w opcjach gry, potem kliknij zielony przycisk
+  jej okna: gra dostaje własne biurko jak każda aplikacja na Macu — przełączasz gestem albo
+  ⌃← / ⌃→ i widać ją w Mission Control. Gra w oknie może trzymać kursor w środku, jak na
+  Windowsie; ⌘Tab go uwalnia.
+- **Brak dźwięku w grze?** Zamknij grę i uruchom ją jeszcze raz — zwykle dźwięk wraca.
+- **Wymaga Rosetty 2.** Opakowanie Sikarugira i jego silnik Wine to kod dla Intela, więc macOS
+  pokazuje Steam Windows na liście aplikacji, które nie zadziałają w macOS 28. Czy tam ruszy,
+  zależy od tego, ile Rosetty Apple zostawi dla gier, i od nowej wersji Sikarugira; w macOS 27
+  działa.
 
 ### Co nie zadziałało
 
